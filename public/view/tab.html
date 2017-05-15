@@ -1,0 +1,281 @@
+<style>
+    .register-title {
+        width: 270px;
+        line-height: 43px;
+        margin: 50px auto 20px;
+        font-size: 19px;
+        font-weight: 500;
+        color: white;
+        color: rgba(255, 255, 255, 0.95);
+        text-align: center;
+        text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+        background: #d7604b;
+        border-radius: 3px;
+        background-image: -webkit-linear-gradient(top, #dc745e, #d45742);
+        background-image: -moz-linear-gradient(top, #dc745e, #d45742);
+        background-image: -o-linear-gradient(top, #dc745e, #d45742);
+        background-image: linear-gradient(to bottom, #dc745e, #d45742);
+        -webkit-box-shadow: inset 0 1px rgba(255, 255, 255, 0.1), inset 0 0 0 1px rgba(255, 255, 255, 0.05), 0 0 1px 1px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.3);
+        box-shadow: inset 0 1px rgba(255, 255, 255, 0.1), inset 0 0 0 1px rgba(255, 255, 255, 0.05), 0 0 1px 1px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.3);
+    }
+    
+    .register {
+        margin: 0 auto;
+        width: 230px;
+        padding: 20px;
+        background: #f4f4f4;
+        border-radius: 3px;
+        -webkit-box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.3);
+        box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.3);
+    }
+    
+    input {
+        font-family: inherit;
+        font-size: inherit;
+        color: inherit;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    
+    .register-input {
+        display: block;
+        width: 100%;
+        height: 38px;
+        margin-top: 2px;
+        font-weight: 500;
+        background: none;
+        border: 0;
+        border-bottom: 1px solid #d8d8d8;
+    }
+    
+    .register-input:focus {
+        border-color: #1e9ce6;
+        outline: 0;
+    }
+    
+    .register-button {
+        display: block;
+        width: 100%;
+        height: 42px;
+        margin-top: 25px;
+        font-size: 16px;
+        font-weight: bold;
+        color: #494d59;
+        text-align: center;
+        text-shadow: 0 1px rgba(255, 255, 255, 0.5);
+        background: #fcfcfc;
+        border: 1px solid;
+        border-color: #d8d8d8 #d1d1d1 #c3c3c3;
+        border-radius: 2px;
+        cursor: pointer;
+        background-image: -webkit-linear-gradient(top, #fefefe, #eeeeee);
+        background-image: -moz-linear-gradient(top, #fefefe, #eeeeee);
+        background-image: -o-linear-gradient(top, #fefefe, #eeeeee);
+        background-image: linear-gradient(to bottom, #fefefe, #eeeeee);
+        -webkit-box-shadow: inset 0 -1px rgba(0, 0, 0, 0.03), 0 1px rgba(0, 0, 0, 0.04);
+        box-shadow: inset 0 -1px rgba(0, 0, 0, 0.03), 0 1px rgba(0, 0, 0, 0.04);
+    }
+    
+    .register-button:active {
+        background: #eee;
+        border-color: #c3c3c3 #d1d1d1 #d8d8d8;
+        background-image: -webkit-linear-gradient(top, #eeeeee, #fcfcfc);
+        background-image: -moz-linear-gradient(top, #eeeeee, #fcfcfc);
+        background-image: -o-linear-gradient(top, #eeeeee, #fcfcfc);
+        background-image: linear-gradient(to bottom, #eeeeee, #fcfcfc);
+        -webkit-box-shadow: inset 0 1px rgba(0, 0, 0, 0.03);
+        box-shadow: inset 0 1px rgba(0, 0, 0, 0.03);
+    }
+    
+    .register-button:focus {
+        outline: 0;
+    }
+    
+    .register-switch {
+        width: 200px;
+        height: 35px;
+        margin-bottom: 15px;
+        padding: 2px;
+        background: #6db244;
+        border-radius: 2px;
+        background-image: -webkit-linear-gradient(top, #60a83a, #7dbe52);
+        background-image: -moz-linear-gradient(top, #60a83a, #7dbe52);
+        background-image: -o-linear-gradient(top, #60a83a, #7dbe52);
+        background-image: linear-gradient(to bottom, #60a83a, #7dbe52);
+        -webkit-box-shadow: inset 0 1px rgba(0, 0, 0, 0.05), inset 1px 0 rgba(0, 0, 0, 0.02), inset -1px 0 rgba(0, 0, 0, 0.02);
+        box-shadow: inset 0 1px rgba(0, 0, 0, 0.05), inset 1px 0 rgba(0, 0, 0, 0.02), inset -1px 0 rgba(0, 0, 0, 0.02);
+    }
+    
+    .register-switch-input {
+        display: none;
+    }
+    
+    .register-switch-label {
+        float: left;
+        width: 50%;
+        line-height: 32px;
+        color: white;
+        text-align: center;
+        text-shadow: 0 -1px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+    }
+    
+    .register-switch-input:checked + .register-switch-label {
+        font-weight: 500;
+        color: #434248;
+        text-shadow: 0 1px rgba(255, 255, 255, 0.5);
+        background: white;
+        border-radius: 2px;
+        background-image: -webkit-linear-gradient(top, #fefefe, #eeeeee);
+        background-image: -moz-linear-gradient(top, #fefefe, #eeeeee);
+        background-image: -o-linear-gradient(top, #fefefe, #eeeeee);
+        background-image: linear-gradient(to bottom, #fefefe, #eeeeee);
+        -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.1);
+    }
+    
+    :-moz-placeholder {
+        color: #aaa;
+        font-weight: 300;
+    }
+    
+    ::-moz-placeholder {
+        color: #aaa;
+        font-weight: 300;
+        opacity: 1;
+    }
+    
+    ::-webkit-input-placeholder {
+        color: #aaa;
+        font-weight: 300;
+    }
+    
+    :-ms-input-placeholder {
+        color: #aaa;
+        font-weight: 300;
+    }
+    
+    ::-moz-focus-inner {
+        border: 0;
+        padding: 0;
+    }
+</style>
+
+
+<nav class="navbar navbar-default" role="navigation">
+
+    <div class="navbar-header" style="width: 100%;">
+
+        <div class="nav-center" style="margin: 10px auto; text-align: center;">
+            <a href="" ng-click='RedirectToURL();'><img class="navbarlogo" src="img/navbarlogo.png" /></a>
+        </div>
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#example-navbar-collapse">
+         <span class = "sr-only">Toggle navigation</span>
+         
+         <span class = "icon-bar"></span>
+		 <span class = "icon-bar"></span>
+		 <span class = "icon-bar"></span>
+      </button>
+
+    </div>
+
+    <div class="collapse navbar-collapse" id="example-navbar-collapse">
+        <ul class="nav navbar-nav navbar-right" style="position: absolute;  right: 25px;">
+            <li class="dropdown">
+                <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+               {{username}}
+              <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <!--li><a href="">Overview</a></li>
+                    <li><a href="">Admin</a></li>
+                    <li><a href="">Users</a></li>
+                    <li><a href="">Settings</a></li>
+                    <li-- role="separator" class="divider"></li-->
+                    <li><a href="" ng-click='LogOut();'>Log Out</a></li>
+                </ul>
+            </li>
+        </ul>
+
+    </div>
+
+</nav>
+
+
+<div class="wizardBar container ">
+    <div class="row" style="height:50px;">
+        <div class="wizardButton col-lg-3" style="padding:0px; height:50px;">
+            <button type="button" class="col-lg-3 wizardBtn btn btn-success btn-block btn-arrow-start-tan" style="padding-left:0px;"><strong><b class="numberCircleActive">1</b> Location</strong></button>
+        </div>
+        <div class="wizardButton col-lg-3" style="padding:0px; height:50px;">
+            <button type="button" class="wizardBtn btn-default btn btn-block btn-arrow-right-tan" ng-click='tab2_click()'><b class="numberCircleInActive">2</b> Images</button>
+        </div>
+        <div class="wizardButton col-lg-3" style="padding:0px; height:50px;">
+            <button type="button" class="wizardBtn btn-default btn btn-block btn-arrow-right-tan"><b class="numberCircleInActive">3</b> Dates</button>
+        </div>
+        <div class="wizardButton col-lg-3" style="padding:0px; height:50px;">
+            <button type="button" class="wizardBtn btn-default btn btn-block btn-arrow-end-tan"><b class="numberCircleInActive">4</b> Confirmation</button>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="container panelwhite-tie">
+    <div class="row">
+        <div class="navButtons col-lg-6">
+            <div class="wizardNazContainerLeft">
+                <a class="btn btn-block btn-wizardred-tie">Back</a>
+            </div>
+            <div class="navButtons " style="margin-top:10px;float:right;">
+                <!--button-- type="button" class="btn btn-wizardgrn btn-success-outline" ng-click="SelectWholeWorld();">Select Whole World</button-->
+                <div class="register-switch">
+                    <!--button-- type="button" class="btn btn-wizardgrn btn-success-outline" ng-click="SelectWholeWorld();">Select Whole World</button-->
+                    <input type="radio" name="sex" id="private" class="register-switch-input" checked ng-value="'private'" ng-model="globalresult" ng-change='SelectWholeWorld();'>
+                    <label for="private" class="register-switch-label">Private</label>
+                    <input type="radio" name="sex" id="public" class="register-switch-input" ng-value="'public'" ng-model="globalresult" ng-change='SelectWholeWorld();'>
+                    <label for="public" class="register-switch-label">Public</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="navButtons col-lg-6">
+            <div class="navButtons " style=" display:inline; ">
+                <button type="button" class="btn btn-wizardred-tie btn-success-outline" style='margin-top:10px;' ng-click='ResetRegion();'>Reset selection</button>
+            </div>
+
+            <div class="wizardNazContainerRight" style="padding-right:20px;">
+                <a class="btn btn-block btn-wizardgrn" ng-click='tab2_click()'>Next</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container panelgray">
+    <div class="row">
+        <div class="col-lg-4  text-center">
+            <p id="geofenceSize" class="fenceSize">
+                <div id="pointsNumbero"> <b>SIZE: </b> </div>
+                <div id="squareNumber"> <b></b> </div>
+            </p>
+        </div>
+        <div class="col-lg-4 text-center >
+            <p id=" mapStatus " class="midPanel text-info "style="padding-top:2%; ">
+            <font color="green "><b>Drag pointers to edit fence. Right click to delete pointer.</b></font>
+            
+        </div>
+        <div class="col-lg-4 " style="padding-top:20px;padding-left:200px ">
+            <input type="text " placeholder="search map " autocomplete="off " name="q " id="funkystyling "class="search-input quick-search " list="browsers " value=" ">
+                <datalist id=browsers >
+                    <option>  Google
+                    <option> IE9
+                </datalist>
+        </div>
+    </div>		
+</div>
+
+
+<div class="container panelgray " style="padding:0px; ">
+    <div id='map-tie'></div>
+</div>

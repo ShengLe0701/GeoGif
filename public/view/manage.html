@@ -1,0 +1,271 @@
+<nav class="navbar navbar-default" role="navigation">
+
+    <div class="navbar-header" style="width: 100%;">
+
+        <div class="nav-center" style="margin: 10px auto; text-align: center;">
+            <a href=""><img class="navbarlogo" src="img/navbarlogo.png" /></a>
+        </div>
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#example-navbar-collapse">
+         <span class = "sr-only">Toggle navigation</span>
+         
+         <span class = "icon-bar"></span>
+		 <span class = "icon-bar"></span>
+		 <span class = "icon-bar"></span>
+      </button>
+
+    </div>
+
+    <div class="collapse navbar-collapse" id="example-navbar-collapse">
+        <ul class="nav navbar-nav navbar-right" style="position: absolute;  right: 25px;">
+            <li class="dropdown">
+                <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+               {{username}}
+              <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <!--li><a href="">Overview</a></li>
+                    <li><a href="">Admin</a></li>
+                    <li><a href="">Users</a></li>
+                    <li><a href="">Settings</a></li>
+                    <li-- role="separator" class="divider"></li-->
+                    <li><a href="" ng-click='LogOut();'>Log Out</a></li>
+                </ul>
+            </li>
+        </ul>
+
+    </div>
+
+</nav>
+
+
+
+<div class="container panelwhite" id="firstNav">
+    <div class="row">
+        <div class="col-lg-4 ">
+            <button type="button" class="btn btn-wizardgrn btn-success-outline" ng-click="AddNewOverlay();" style="margin-left: 20px;">Add new overlay</button>
+        </div>
+        <div class="col-lg-4 text-center">
+            <button type="button" class="btn btn-globalMap btn-primary-outline" ng-click="ViewGlobalMap();">View global map</button>
+        </div>
+        <div class="col-lg-4 ">
+            <div id="custom-search-main" style="width:50%;float:right;">
+                <div class="input-group col-md-12">
+                    <input type="text" class="form-control input-sm" placeholder="Search Overlays" />
+                    <span class="input-group-btn">
+                            <button class="btn btn-sm" type="button">
+                                <i class="glyphicon glyphicon-search"></i>
+                            </button>
+                        </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container panel -white">
+    <div class="row">
+        <div class="col-lg-4 ">
+            <h3 style=" margin-left: 20px; font-size: 20px;">Manage Filters</h3>
+        </div>
+        <div class="col-lg-4  text-center">
+            <p>{{msgtext}}</p>
+        </div>
+        <div class="col-lg-4 ">
+            <!--p style="display:inline">Sorted by: </p>
+            <p-- style="display:inline" class="green"><strong>Popularity</strong></p-->
+
+            <div class='row' style='padding-top: 10px; '>
+                <div class="col-lg-2" style="padding-left:80px; ">
+
+                </div>
+                <div class="col-lg-3">
+                    <label style="padding-left:35px; "><p class="form-control-static">Sorted by:</p></label>
+
+                </div>
+                <div class="col-lg-6">
+                    <select id="myselection" ng-init="selectedColors=3" class="form-control green" style="width: 95%;margin-left: 10px;" ng-model="selectedColors">
+                        <option value="1">Popularity</option>
+                        <option value="2">Least Popular</option>
+                        <option value="3">By Name </option>
+                        <option value="4">By Date Uploaded</option>
+                    </select>
+
+                </div>
+            </div>
+
+
+
+
+        </div>
+    </div>
+</div>
+
+<div class="container panel mainContent ">
+    <div class="row">
+        <div class="col-sm-6 col-md-2" ng-if='FilterList' ng-repeat="item in FilterList">
+            <div class="thumbnail" style="width:190px; height: 230px;">
+                <!--img ng-src="{{item.url}}" alt="Generic placeholder thumbnail" style='width: 190px;height: 180px;'-->
+
+                <!--thumbnail file-type="{{item.videoFlag}}" source="{{item.url}}" max-height="180" max-width="180"></thumbnail-->
+                <div ng-if="item.videoFlag=='video'">
+                    <video style="width: 180px;height: 180px;">
+                        <source src="{{item.url|trustUrl}}" type="video/mp4" >
+                    </video>
+                    <a class="RoundedRectangle8" href="" data-toggle="modal" data-target="#Create" style="top: 46px;" ng-click="EditModal( item );">
+                        <img src="images/RoundedRectangle8.png">
+                        <div class="Edit"><img src="images/Edit.png"></div>
+                    </a>
+                    <div class="Shape4copy" style="top: 49px;"><img src="images/Shape4copy.png"></div>
+                    <a class="Ellipse2" href="" data-toggle="modal" style=" top: 46px;" data-target="#Delete" ng-click="DeleteModal(item);"><img src="images/Ellipse2.png"></a>
+                    <p class='Times'>Used154times</p>
+                    <h3 class='Title' style="font-weight: bold; font-size: 20px;">{{item.name}}</h3>
+                </div>
+                <div ng-if="item.videoFlag=='image'">
+                    <img ng-src="{{item.url}}" class="thumbimg" style="width:180px; height:180px;">
+                    <a class="RoundedRectangle8" href="" data-toggle="modal" data-target="#Create" ng-click="EditModal( item );">
+                        <img src="images/RoundedRectangle8.png">
+                        <div class="Edit"><img src="images/Edit.png"></div>
+                    </a>
+                    <div class="Shape4copy"><img src="images/Shape4copy.png"></div>
+                    <a class="Ellipse2" href="" data-toggle="modal" data-target="#Delete" ng-click="DeleteModal(item);"><img src="images/Ellipse2.png"></a>
+                    <p class='Times'>Used154times</p>
+                    <h3 class='Title' style="font-weight: bold; font-size: 20px;">{{item.name}}</h3>
+                </div>
+
+
+
+            </div>
+        </div>
+
+
+
+
+
+
+    </div>
+</div>
+
+<!--div class="container">
+    <div class="row">
+        <div class="col-lg-12 text-center">
+            <ul class="pagination">
+                <li class="disabled"><a href="">&laquo;</a></li>
+                <li class="active"><a href="">1</a></li>
+                <li class="disabled"><a href="">&raquo;</a></li>
+            </ul>
+        </div>
+    </div>
+</div-->
+
+<div bn-modals ng-show="subview" ng-switch="subview">
+    <div class="modal fade" id="Create" tabindex="-1" role="dialog" aria-labelledby="Create">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h5 class="modal-title text-center" style="font-weight: bold;">Edit Filter</h5>
+                </div>
+                <div class="modal-body">
+
+                    <form class="form-horizontal" name="FilterEditForm" ng-switch-when="prompt" ng-controller="ManageCtrl">
+                        <div class="col-xs-6">
+                            <label><p class="form-control-static">Name</p></label>
+                        </div>
+                        <div class="col-xs-12" style="margin-top: -10px;">
+                            <div class="col-xs-6">
+                                <input type="text" id="FilterName" name="Name" class="form-control" placeholder="Name" required ng-model="FilterName">
+                            </div>
+                            <div class="col-xs-6">
+                                <p class="form-control-static">Active since {{FilterStart}}</p>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-6">
+                            <label><p class="form-control-static">Finish Date</p></label>
+                            <input type="text" id="datepicker" name="Finish_Date" class="form-control" placeholder="Finish Date" style="margin-top:-10px;" required ng-model="FilterEndDate">
+                            <span class="add-on"><i class="icon-th"></i></span>
+
+
+                        </div>
+
+                        <div class="col-xs-6">
+                            <label><p class="form-control-static">Finish Time({{FilterEndTime}})</p></label>
+                            <input type="text" id="timepicker" name="timepicker" class="form-control timepicker" placeholder="Finish Time" style="margin-top: -10px;" required>
+
+                        </div>
+
+                        <div class="col-xs-6">
+                            <label><p class="form-control-static">Location</p></label>
+
+                        </div>
+
+                        <!--div class='PlaceDiv col-xs-12'>
+                            <input id="placepicker" class="form-control" data-map-container-id="themap" value='United States' required ng-model="FilterLocation" />
+                            <div id="themap" class="collapse in">
+                                <div class="locationmap thumbnail"></div>
+                            </div>
+                        </div-->
+
+
+
+
+
+
+                    </form>
+                    <div class="container">
+                        <div class="row">
+                            <div id="map-tie" class=""></div>
+                        </div>
+                    </div>
+                    <input type="submit" class="form-control btn-default btn-green" value="Done" data-dismiss="modal" ng-click="FilterEdit();">
+
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<div bn-modals ng-show="subview" ng-switch="subview">
+    <div class="modal fade" id="Delete" tabindex="-1" role="dialog" aria-labelledby="Delete">
+        <div class="modal-dialog" role="document" style='padding-left: 10%;    padding-top: 15%;'>
+            <div class="modal-content" style="width: 70%;">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h5 class="modal-title text-center" style="font-weight: bold;">Delete Filter</h5>
+                </div>
+                <div class="modal-body">
+                    <form class="form-horizontal" name="" ng-switch-when="prompt" ng-controller="ManageCtrl">
+
+                        <label><p class="form-control-static">Are you sure you want to delete this filter?</p></label>
+                        <div class="row">
+
+                            <div class="col-xs-1"></div>
+                            <div class="col-xs-3">
+                                <input type="button" class="form-control btn-default " value="cancel" data-dismiss="modal">
+                            </div>
+                            <div class="col-xs-4"></div>
+                            <div class="col-xs-3">
+                                <input type="submit" class="form-control" style='background: red;color: white;' value="Delete" data-dismiss="modal" ng-click="DeleteFilter();">
+                            </div>
+                            <div class="col-xs-1"></div>
+                        </div>
+
+
+                    </form>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

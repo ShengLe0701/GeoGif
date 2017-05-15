@@ -1,0 +1,176 @@
+<style>
+    .carousel-inner > .item > img,
+    .carousel-inner > .item > a > img {
+        width: 100%;
+        margin: auto;
+    }
+</style>
+
+
+<nav class="navbar navbar-default" role="navigation">
+
+    <div class="navbar-header" style="width: 100%;">
+
+        <div class="nav-center" style="margin: 10px auto; text-align: center;">
+            <a href="" ng-click='RedirectToURL();'><img class="navbarlogo" src="img/navbarlogo.png" /></a>
+        </div>
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#example-navbar-collapse">
+         <span class = "sr-only">Toggle navigation</span>
+         
+         <span class = "icon-bar"></span>
+		 <span class = "icon-bar"></span>
+		 <span class = "icon-bar"></span>
+      </button>
+
+    </div>
+
+    <div class="collapse navbar-collapse" id="example-navbar-collapse">
+        <ul class="nav navbar-nav navbar-right" style="position: absolute;  right: 25px;">
+            <li class="dropdown">
+                <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+               {{username}}
+              <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <!--li><a href="">Overview</a></li>
+                    <li><a href="">Admin</a></li>
+                    <li><a href="">Users</a></li>
+                    <li><a href="">Settings</a></li>
+                    <li-- role="separator" class="divider"></li-->
+                    <li><a href="" ng-click='LogOut();'>Log Out</a></li>
+                </ul>
+            </li>
+        </ul>
+
+    </div>
+
+</nav>
+
+
+
+
+<div class="wizardBar container ">
+    <div class="row" style="height:50px;">
+        <div class="wizardButton col-lg-3 " style="padding:0px; height:50px;">
+            <button type="button" class="wizardBtn btn btn-success btn-block btn-arrow-start-tan" ng-click='tab1_click()'><strong><b class="numberCircleActive">&#x2713;</b> CHOOSE LOCATION</strong></button>
+        </div>
+        <div class="wizardButton col-lg-3" style="padding:0px;height:50px;">
+            <button type="button" class="wizardBtn btn-success btn btn-block btn-arrow-right-tan" ng-click='tab2_click()'><strong><b class="numberCircleActive">&#x2713;</b> UPLOAD FILTER</strong></button>
+        </div>
+        <div class="wizardButton col-lg-3" style="padding:0px; height:50px;">
+
+            <button type="button" class="wizardBtn btn-success btn btn-block btn-arrow-right-tan"><strong><b class="numberCircleActive">3</b> CHOOSE DATE</strong></button>
+        </div>
+        <div class="wizardButton col-lg-3" style="padding:0px;height:50px;">
+            <button type="button" class="wizardBtn btn-default 	btn btn-block btn-arrow-end-tan" ng-click='tab4_click()'><b class="numberCircleInActive">4</b> OVERVIEW</button>
+        </div>
+    </div>
+</div>
+
+<div class="container panelwhite-tie">
+    <div class="row">
+        <div class="navButtons col-lg-6">
+            <div class="wizardNazContainerLeft">
+                <a class="btn btn-block btn-wizardred-tie" ng-click='tab2_click()'>Back</a>
+            </div>
+        </div>
+
+        <div class="navButtons col-lg-6">
+            <div class="wizardNazContainerRight" style="padding-right:20px;">
+                <a class="btn btn-block btn-wizardgrn " ng-click='tab4_click()'>Next</a>
+            </div>
+        </div>
+    </div>
+
+    <hr style="margin:2px">
+
+    <div class="row" style="padding-top:3px; padding-bottom:3px;">
+        <div class="col-lg-6" style="padding-left:1%;">
+            <div style="float:left">
+                <a class="btn btn-block btn-wizardgrn " id="btn_quick_date" ng-click="click_quick_date();change_button_color('btn_quick_date')">Apply quick dates</a>
+            </div>
+        </div>
+
+        <div class="col-lg-6" style="padding-right:2%">
+            <div class="row">
+                <div class="col-lg-3">
+                    <a class="btn btn-block btn-wizardblu-tie" id="btn_week" ng-click="click_week();change_button_color('btn_week');">1 Week</a>
+                </div>
+                <div class="col-lg-3">
+                    <a class="btn btn-block btn-wizardblu-tie" id="btn_month" ng-click="click_month();change_button_color('btn_month');">1 Month</a>
+                </div>
+                <div class="col-lg-3">
+                    <a class="btn btn-block btn-wizardblu-tie" id="btn_year" ng-click="click_year();change_button_color('btn_year');">1 Year</a>
+                </div>
+                <div class="col-lg-3">
+                    <a class="btn btn-block btn-wizardblu-tie" id="btn_forever" ng-click="click_forever();change_button_color('btn_forever');">Forever</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+<div class="container panelwhite-tie" style="margin-top:3%;">
+    <div class="col-lg-6">
+        <div class="row" style="float:right; padding-right:6%;height:300px;">
+            <div class="yui3-u-3-4 print-max-width">
+                <div id="docs-main" class="content">
+                    <style>
+                        .example {
+                            font-size: 15px;
+                        }
+                        
+                        .example h4 {
+                            border: none;
+                            text-transform: none;
+                        }
+                        
+                        .example th {
+                            background: #FFFFFF;
+                            color: #00AE00;
+                            text-transform: none;
+                            border: none;
+                        }
+                    </style>
+                </div>
+            </div>
+            <div class="example yui3-skin-sam">
+                <!-- Add an additional blue button style -->
+
+                <div id="demo" class="yui3-skin-sam yui3-g">
+                    <!-- You need this skin class -->
+                    <div id="leftcolumn" class="yui3-u">
+                        <div id="mycalendar"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="col-sm-6">
+        <div class="row" style="padding-top:2%;">
+            <div class="col-lg-4">
+                <b>Start date:</b><br>
+                <input type="text" name="firstname" id="startdate" disabled ng-model='startdate'><br>
+            </div>
+            <div class="col-lg-4">
+                <b>End date:</b><br>
+                <input type="text" id="enddate" disabled ng-model='enddate'><br>
+            </div>
+        </div>
+
+        <div class="row" style="padding-top:2%;">
+            <div class="col-lg-4">
+                <b>Start time:</b><br>
+                <input type="time" id="starttime" ng-model='starttime'><br>
+            </div>
+            <div class="col-lg-4">
+                <b>End time:</b><br>
+                <input type="time" id="endtime" ng-model='endtime'><br>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

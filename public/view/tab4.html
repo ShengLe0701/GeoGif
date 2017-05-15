@@ -1,0 +1,247 @@
+<nav class="navbar navbar-default" role="navigation">
+
+    <div class="navbar-header" style="width: 100%;">
+
+        <div class="nav-center" style="margin: 10px auto; text-align: center;">
+            <a href="" ng-click='RedirectToURL();'><img class="navbarlogo" src="img/navbarlogo.png" /></a>
+        </div>
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#example-navbar-collapse">
+         <span class = "sr-only">Toggle navigation</span>
+         
+         <span class = "icon-bar"></span>
+		 <span class = "icon-bar"></span>
+		 <span class = "icon-bar"></span>
+      </button>
+
+    </div>
+
+    <div class="collapse navbar-collapse" id="example-navbar-collapse">
+        <ul class="nav navbar-nav navbar-right" style="position: absolute;  right: 25px;">
+            <li class="dropdown">
+                <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+               {{username}}
+              <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <!--li><a href="">Overview</a></li>
+                    <li><a href="">Admin</a></li>
+                    <li><a href="">Users</a></li>
+                    <li><a href="">Settings</a></li>
+                    <li-- role="separator" class="divider"></li-->
+                    <li><a href="" ng-click='LogOut();'>Log Out</a></li>
+                </ul>
+            </li>
+        </ul>
+
+    </div>
+</nav>
+
+
+
+<div class="wizardBar container ">
+    <div class="row" style="height:50px;">
+        <div class="wizardButton col-lg-3" style="padding:0px; height:50px;">
+            <button type="button" class="wizardBtn btn btn-success btn-block btn-arrow-start-tan" ng-click='tab1_click();'><strong><b class="numberCircleActive">&#x2713;</b> CHOOSE LOCATION</strong></button>
+        </div>
+        <div class="wizardButton col-lg-3" style="padding:0px; height:50px;">
+            <button type="button" class="wizardBtn btn-success btn btn-block btn-arrow-right-tan" ng-click='tab2_click();'><strong><b class="numberCircleActive">&#x2713;</b> UPLOAD FILTER</strong></button>
+        </div>
+        <div class="wizardButton col-lg-3" style="padding:0px; height:50px;">
+
+            <button type="button" class="wizardBtn btn-success btn btn-block btn-arrow-right-tan" ng-click='tab3_click();'><strong><b class="numberCircleActive">&#x2713;</b> CHOOSE DATE</strong></button>
+        </div>
+        <div class="wizardButton col-lg-3" style="padding:0px; height:50px;">
+            <button type="button" class="wizardBtn btn-success btn btn-block btn-arrow-end-tan"><strong><b class="numberCircleActive">4</b> OVERVIEW</strong></button>
+        </div>
+    </div>
+</div>
+
+<div class="container panelwhite-tie">
+    <div class="row">
+        <div class="navButtons col-lg-6">
+            <div class="wizardNazContainerLeft">
+                <a href="" class="btn btn-block btn-wizardred-tie" ng-click='tab3_click();'>Back</a>
+            </div>
+        </div>
+
+
+        <div class="navButtons col-lg-6">
+            <div class="wizardNazContainerRight" style="padding-right:20px;">
+                <a class="btn btn-block btn-wizardgrn " data-toggle="modal" data-target="#myModal">Confirm</a>
+
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" style="width:30%;">
+        <div class="modal-content" style="margin-top:60%;">
+            <div class="modal-header" style="text-align:center;">
+                <img src="img/confirm.jpg" style="width:50px;height:50px;">
+
+            </div>
+            <div class="modal-body" style="text-align:center;">
+                <div>
+                    <label>Congrats! Filter is uploaded successfully and now </label>
+                </div>
+                <div>
+                    <label>live on the app platform</label>
+                </div>
+            </div>
+            <div class="modal-footer" style="text-align:center;">
+                <button type="button" class="btn btn-wizardgrn " data-dismiss="modal" ng-click="uploadFilter();">Go to Manage</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+
+
+<div class="container text-center" style="padding-top:30px">
+
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="panelwhite-tie" style="height:500px">
+                <h3 style="padding-left:40px;"><a href="" style="float:right; margin-right:10px;" class="btn btn-wizardgrn " >Edit</a>Location</h3>
+                <hr></hr>
+                <font color="gray">
+                    <b>SIZE:</b>
+                </font>
+                <b>{{square}}</b>
+
+                <div id="map-tie"></div>
+            </div>
+        </div>
+
+        <div class="col-sm-4 " style="float:center;">
+            <div class="panelwhite-tie" style="height:500px">
+                <h3 style="padding-left:40px;"><a href="" style="float:right; margin-right:10px;" class="btn btn-wizardgrn " >Edit</a>Filter Assets</h3>
+                <hr></hr>
+                <div style="text-align:left;padding-left:5%">Filter Name</div>
+                <input type="text" style="width:90%" name="fname"><br>
+
+
+                <div class="row ">
+                    <div class="col-sm-2 " style="float:center">
+                        <div class="glyphicon glyphicon-chevron-left" style="padding-top:250%; padding-left:80%" href="#myCarousel" role="button" data-slide="prev">
+                        </div>
+                    </div>
+                    <div class="col-sm-8">
+                        <div class="container" style="width:100%;margin-top:10px; text-align:center;">
+                            <div id="myCarousel" class="carousel slide" style="float:center;">
+                                <!-- Indicators -->
+
+
+                                <!-- Wrapper for slides -->
+                                <div class="carousel-inner" role="listbox" style="text-align:center;">
+                                    <!--div-- class="item active" style="float:center;">
+                                        <img src="img/img0001.png" alt="Chania">
+                                    </div-->
+
+                                    <!--div class="item">
+                                        <img src="img/img0001.png" alt="Chania">
+                                    </div>
+
+                                    <div class="item">
+                                        <img src="img/img0001.png" alt="Chania">
+                                    </div>
+
+                                    <div-- class="item">
+                                        <img src="img/img0001.png" alt="Chania">
+                                    </div-->
+
+                                    <div class="item active">
+                                        <!--img ng-src="{{img1}}" style='width: 400px;height:300px;' alt="Chania"-->
+
+                                        <!--thumbnail file-type="{{type1}}" source="{{img1}}" max-height="300" max-width="380" alt="Chania"></thumbnail-->
+                                        <div ng-if="type1=='video'">
+                                            <video style="width:380px;height:300px;">
+                                                <source src="{{img1|trustUrl}}" type="video/mp4" >
+                                            </video>
+
+                                        </div>
+                                        <div ng-if="type1=='image'">
+                                            <img ng-src="{{img1}}" style="width:400px; height:300px;" alt="chania">
+
+                                        </div>
+                                    </div>
+
+                                    <div class="item" ng-if="records.filters.length!=0 " ng-repeat="x in records.filters">
+                                        <!--img ng-src="{{x}}" style='width: 400px;height:300px;' alt="Chania"-->
+                                        <!--thumbnail file-type="{{x.types}}" source="{{x.filters}}" max-height="300" max-width="380" alt="Chania"></thumbnail-->
+                                        <div ng-if="records.types[$index]=='video'">
+                                            <video style="width:380px;height:300px;">
+                                                <source src="{{x|trustUrl}}" type="video/mp4" >
+                                            </video>
+
+                                        </div>
+                                        <div ng-if="records.types[$index]=='image'">
+                                            <img ng-src="{{x}}" style="width:400px; height:300px;" alt="chania">
+
+                                        </div>
+
+
+                                    </div>
+
+                                </div>
+
+                                <!-- Left and right controls -->
+
+                            </div>
+
+
+
+                        </div>
+                    </div>
+
+                    <div class="col-sm-2 " style="float:center">
+                        <div class="glyphicon glyphicon-chevron-right" style="padding-top:250%; padding-right:100%" href="#myCarousel" role="button" data-slide="next">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-4 " style="float:right">
+            <div class="panelwhite-tie" style="height:500px;">
+                <h3 style="padding-left:40px;"><a  style="float:right; margin-right:10px;" class="btn btn-wizardgrn " >Edit</a>Date & Time</h3>
+                <hr></hr>
+
+                <div class="row">
+                    <div class="col-sm-2">
+                        <font color="gray">
+                            <p><b>Starts</b></p>
+                        </font>
+                    </div>
+                    <div class="col-sm-5">
+                        <p><b>{{startdate}}</b></p>
+                    </div>
+                    <div class="col-sm-5">
+                        <p><b>{{starttime}}</b></p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-2">
+                        <font color="gray">
+                            <p><b>End</b></p>
+                        </font>
+                    </div>
+                    <div class="col-sm-5">
+                        <p><b>{{enddate}}</b></p>
+                    </div>
+                    <div class="col-sm-5">
+                        <p><b>{{endtime}}</b></p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+</div>

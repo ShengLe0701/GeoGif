@@ -1,0 +1,71 @@
+ .Shape4copy {
+     left: 158px;
+     top: 19px;
+     position: absolute;
+     width: 14px;
+     height: 14px;
+     z-index: 7;
+ }
+ 
+ .Small_Shape4copy {
+     left: 103px;
+     top: 14px;
+     position: absolute;
+     width: 14px;
+     height: 14px;
+     z-index: 7;
+ }
+ 
+ .Times {
+     font-size: 20px;
+     font-weight: bold;
+     color: white;
+     margin-top: -40px;
+     margin-left: 30px;
+ }
+ 
+ .Ellipse2 {
+     left: 150px;
+     top: 16px;
+     position: absolute;
+     width: 30px;
+     height: 29px;
+     z-index: 8;
+ }
+ 
+ .Small_Ellipse2 {
+     left: 95px;
+     top: 10px;
+     position: absolute;
+     width: 30px;
+     height: 29px;
+     z-index: 8;
+ }
+ 
+ .RoundedRectangle8 {
+     left: 18px;
+     top: 16px;
+     position: absolute;
+     width: 57px;
+     height: 29px;
+     z-index: 9;
+ }
+ 
+ .Edit {
+     left: 12px;
+     top: 5px;
+     position: absolute;
+     width: 30px;
+     height: 13px;
+     z-index: 10;
+ }
+ 
+ .Title {
+     margin-left: 15%;
+ }
+ 
+ .Small_Title {
+     top: 126px;
+     position: absolute;
+     left: 12px;
+ }
